@@ -1,4 +1,9 @@
 module.exports = {
+  root: true,
+  env: {
+    node: true,
+    jest: true,
+  },
   extends: ['eslint:recommended', 'airbnb-base', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -8,7 +13,6 @@ module.exports = {
     tsconfigRootDir: './',
   },
   plugins: ['@typescript-eslint'],
-  root: true,
   settings: {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts'],
