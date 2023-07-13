@@ -7,9 +7,11 @@
   "module": "dist/module.js",
   "types": "dist/types.d.ts",
   "scripts": {
+    "prepare": "husky install",
     "watch": "parcel watch",
     "build": "parcel build",
-    "lint": "eslint \"src/**\""
+    "lint": "eslint \"src/**\"",
+    "lint:staged": "lint-staged"
   },
   "author": "Furkan Emin Can",
   "license": "GPL-3.0",
@@ -25,6 +27,8 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-import": "^2.25.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "parcel": "^2.9.3",
     "typescript": "^5.1.6"
   },
