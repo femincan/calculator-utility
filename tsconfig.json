@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "lib": ["ESNext"],
+    "types": ["vitest/globals"],
+    "paths": {
+      "@src/*": ["./src/*"]
+    }
+  }
+}
