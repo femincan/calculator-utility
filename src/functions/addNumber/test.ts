@@ -1,6 +1,6 @@
 import { addNumber } from '.';
 
-describe('addNumber (Method)', () => {
+describe('addNumber (Function)', () => {
   test('It should add given number to the end of the calculation string', () => {
     const newCalculationString = addNumber(5, '2+3');
 

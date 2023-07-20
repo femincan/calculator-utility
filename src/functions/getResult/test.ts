@@ -1,6 +1,6 @@
 import { getResult } from '.';
 
-describe('getResult (Method)', () => {
+describe('getResult (Function)', () => {
   test('If there is an operator end of the calculation string, it should removes it and returns the result', () => {
     const result = getResult('10+4-3*3+');
 
