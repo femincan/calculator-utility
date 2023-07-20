@@ -1,6 +1,6 @@
 import { isEndsWithOperator } from '.';
 
-describe('isEndsWithOperator (Utility Method)', () => {
+describe('isEndsWithOperator (Utility Function)', () => {
   test('It should return true if there is an operator in the end of the calculation string', () => {
     const check = isEndsWithOperator('3+5-');
 
