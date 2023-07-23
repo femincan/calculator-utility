@@ -1,4 +1,4 @@
-import { isEndsWithOperator } from '@src/utils';
+import { isEndsWithOperator, removeCharactersFromEnd } from '@src/utils';
 import { CalculationString } from '@src/types';
 import { isEndsWithMinusOperator, switchMinusOperator } from './minus';
 
@@ -12,16 +12,10 @@ const addOperator = (
 
   if (isEndsWithOperator(calculationString)) {
     if (isEndsWithMinusOperator(calculationString)) {
-      return `${calculationString.slice(
-        0,
-        calculationString.length - 2
-      )}${operator}`;
+      return `${removeCharactersFromEnd(calculationString, 2)}${operator}`;
     }
 
-    return `${calculationString.slice(
-      0,
-      calculationString.length - 1
-    )}${operator}`;
+    return `${removeCharactersFromEnd(calculationString)}${operator}`;
   }
 
   if (calculationString.length === 0) {
