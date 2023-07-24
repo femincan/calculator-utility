@@ -1,7 +1,7 @@
 import { CalculationString } from '@src/types';
 import { isEndsWith, removeCharactersFromEnd } from '@src/utils';
 
-const switchMinusOperator = (
+const toggleMinusOperator = (
   calculationString: CalculationString
 ): CalculationString => {
   if (isEndsWith(calculationString, '-')) {
@@ -11,4 +11,4 @@ const switchMinusOperator = (
   return `${calculationString}-`;
 };
 
-export { switchMinusOperator };
+export { toggleMinusOperator };
