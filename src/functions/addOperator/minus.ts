@@ -1,4 +1,5 @@
 import { CalculationString } from '@src/types';
+import { removeCharactersFromEnd } from '@src/utils';
 
 const isEndsWithMinusOperator = (calculationString: CalculationString) =>
   calculationString.at(-1) === '-';
@@ -7,7 +8,7 @@ const switchMinusOperator = (
   calculationString: CalculationString
 ): CalculationString => {
   if (isEndsWithMinusOperator(calculationString)) {
-    return calculationString.slice(0, calculationString.length - 1);
+    return removeCharactersFromEnd(calculationString);
   }
 
   return `${calculationString}-`;

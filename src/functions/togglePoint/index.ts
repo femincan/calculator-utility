@@ -1,5 +1,5 @@
 import { CalculationString } from '@src/types';
-import { isEndsWithOperator } from '@src/utils';
+import { isEndsWithOperator, removeCharactersFromEnd } from '@src/utils';
 import {
   isEndsWithDecimal,
   isEndsWithPoint,
@@ -11,10 +11,10 @@ const togglePoint = (
 ): CalculationString => {
   if (isEndsWithPoint(calculationString)) {
     if (isEndsWithZeroAndPoint(calculationString)) {
-      return calculationString.slice(0, calculationString.length - 2);
+      return removeCharactersFromEnd(calculationString, 2);
     }
 
-    return calculationString.slice(0, calculationString.length - 1);
+    return removeCharactersFromEnd(calculationString);
   }
 
   if (calculationString.length === 0 || isEndsWithOperator(calculationString)) {
