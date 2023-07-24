@@ -1,8 +1,5 @@
 import { CalculationString } from '@src/types';
 
-const isEndsWithPoint = (calculationString: CalculationString) =>
-  calculationString.at(-1) === '.';
-
 const isEndsWithZeroAndPoint = (calculationString: CalculationString) => {
   const zeroAndPointRegex = /^.*0\.$/;
 
@@ -15,4 +12,4 @@ const isEndsWithDecimal = (calculationString: CalculationString) => {
   return decimalRegex.test(calculationString);
 };
 
-export { isEndsWithPoint, isEndsWithZeroAndPoint, isEndsWithDecimal };
+export { isEndsWithZeroAndPoint, isEndsWithDecimal };
