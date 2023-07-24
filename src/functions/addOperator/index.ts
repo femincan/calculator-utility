@@ -4,14 +4,14 @@ import {
   removeCharactersFromEnd,
 } from '@src/utils';
 import { CalculationString } from '@src/types';
-import { switchMinusOperator } from './minus';
+import { toggleMinusOperator } from './minus';
 
 const addOperator = (
   operator: '+' | '-' | '*' | '/',
   calculationString: CalculationString
 ): CalculationString => {
   if (operator === '-') {
-    return switchMinusOperator(calculationString);
+    return toggleMinusOperator(calculationString);
   }
 
   if (isEndsWithOperator(calculationString)) {
