@@ -10,7 +10,7 @@ describe('addOperator (Function)', () => {
     test('It should do nothing if the given operator is other than a minus operator', () => {
       const newCalculationString = addOperator('*', '');
 
-      expect(newCalculationString).toBeFalsy();
+      expect(newCalculationString).toBe('');
     });
   });
 
@@ -18,7 +18,7 @@ describe('addOperator (Function)', () => {
     test('It should remove the minus operator if both the first character and the given operator are minus operators', () => {
       const newCalculationString = addOperator('-', '-');
 
-      expect(newCalculationString).toBeFalsy();
+      expect(newCalculationString).toBe('');
     });
     test('It should add the given operator if the first character is not a minus operator', () => {
       const newCalculationString = addOperator('/', '2');
