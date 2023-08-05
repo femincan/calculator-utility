@@ -19,6 +19,10 @@ const addOperator = (
       return `${removeCharactersFromEnd(calculationString, 2)}${operator}`;
     }
 
+    if (isEndsWith(calculationString, operator)) {
+      return calculationString;
+    }
+
     return `${removeCharactersFromEnd(calculationString)}${operator}`;
   }
 
