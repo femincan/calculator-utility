@@ -10,7 +10,7 @@ describe('addOperator (Function)', () => {
     test('It should do nothing if the given operator is other than a minus operator', () => {
       const newCalculationString = addOperator('*', '');
 
-      expect(newCalculationString).toBeFalsy();
+      expect(newCalculationString).toBe('');
     });
   });
 
@@ -18,7 +18,7 @@ describe('addOperator (Function)', () => {
     test('It should remove the minus operator if both the first character and the given operator are minus operators', () => {
       const newCalculationString = addOperator('-', '-');
 
-      expect(newCalculationString).toBeFalsy();
+      expect(newCalculationString).toBe('');
     });
     test('It should add the given operator if the first character is not a minus operator', () => {
       const newCalculationString = addOperator('/', '2');
@@ -42,6 +42,16 @@ describe('addOperator (Function)', () => {
       const newCalculationString = addOperator('*', '223/-');
 
       expect(newCalculationString).toBe('223*');
+    });
+    test('It should return the same calculation string if the last character is the same operator as the given operator', () => {
+      const newCalculationString = addOperator('+', '1+');
+
+      expect(newCalculationString).toBe('1+');
+    });
+    test('It should replace the operator with the given operator if the last charachter is operator', () => {
+      const newCalculationString = addOperator('*', '92/');
+
+      expect(newCalculationString).toBe('92*');
     });
     test('It should add the given operator if the last character is a number', () => {
       const newCalculationString = addOperator('/', '239+543');
