@@ -48,7 +48,7 @@ describe('addOperator (Function)', () => {
 
       expect(newCalculationString).toBe('1+');
     });
-    test('It should replace the operator with the given operator if the last charachter is operator', () => {
+    test('It should replace the operator with the given operator if the last character is operator', () => {
       const newCalculationString = addOperator('*', '92/');
 
       expect(newCalculationString).toBe('92*');
