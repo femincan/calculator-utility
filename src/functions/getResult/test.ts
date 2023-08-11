@@ -11,7 +11,7 @@ describe('getResult (Function)', () => {
   test('It should validate the calculation string if the validation option is true', () => {
     expect(() =>
       getResult('console.log("Hello World")', { validation: true }),
-    ).toThrow(errorString);
+    ).toThrowError(errorString);
   });
   test('It should not validate the calculation string if the validation option is false', () => {
     const result = getResult('"Hello World"', { validation: false });
