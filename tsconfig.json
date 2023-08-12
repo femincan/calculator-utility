@@ -6,6 +6,8 @@
     "lib": ["ESNext", "DOM"],
     "types": ["vitest/globals"],
     "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "paths": {
       "@src/*": ["./src/*"]
     }
