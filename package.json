@@ -1,7 +1,14 @@
 {
   "name": "calculator-utility",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "🐕‍🦺 Utility functions for calculator apps.",
+  "keywords": [
+    "calculator",
+    "utility",
+    "math",
+    "calculation",
+    "arithmetic"
+  ],
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
