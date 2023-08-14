@@ -1,6 +1,6 @@
 {
   "name": "calculator-utility",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "🐕‍🦺 Utility functions for calculator apps.",
   "source": "src/index.ts",
   "main": "dist/index.js",
