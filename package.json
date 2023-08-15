@@ -36,8 +36,11 @@
   },
   "author": "Furkan Emin Can",
   "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/femincan/calculator-utility"
+  },
   "homepage": "https://github.com/femincan/calculator-utility#readme",
-  "bugs": "https://github.com/femincan/calculator-utility/issues",
   "devDependencies": {
     "@parcel/packager-ts": "^2.9.3",
     "@parcel/transformer-typescript-types": "^2.9.3",
