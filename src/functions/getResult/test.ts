@@ -3,20 +3,10 @@ import { getResult } from '.';
 describe('getResult (Function)', () => {
   const errorString = 'unsupported format';
 
-  test('It should use the default validation option true if the validation option is not provided', () => {
-    expect(() => getResult('someDangerousFunction()')).toThrowError(
+  test('It should throw error if the calculation string is invalid', () => {
+    expect(() => getResult('console.log("Hello World")')).toThrowError(
       errorString,
     );
-  });
-  test('It should validate the calculation string if the validation option is true', () => {
-    expect(() =>
-      getResult('console.log("Hello World")', { validation: true }),
-    ).toThrowError(errorString);
-  });
-  test('It should not validate the calculation string if the validation option is false', () => {
-    const result = getResult('"Hello World"', { validation: false });
-
-    expect(result).toBe('Hello World');
   });
   test('It should throw error if the calculation string is validated but unsupported for eval function', () => {
     expect(() => getResult('24++')).toThrowError(errorString);
