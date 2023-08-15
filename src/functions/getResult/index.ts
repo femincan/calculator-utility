@@ -1,26 +1,19 @@
 /* eslint-disable no-eval */
-import { isEndsWithOperator, removeCharactersFromEnd } from '@src/utils';
 import { CalculationResult, CalculationString } from '@src/types';
+import { isEndsWithOperator, removeCharactersFromEnd } from '@src/utils';
 import { validateCalculationString } from './validateCalculationString';
 
-const defaultOptions = {
-  validation: true,
-};
-
-const getResult = (
-  calculationString: CalculationString,
-  options = defaultOptions,
-): CalculationResult => {
+const getResult = (calculationString: CalculationString): CalculationResult => {
   try {
-    if (options.validation && !validateCalculationString(calculationString)) {
+    if (!validateCalculationString(calculationString)) {
       throw new Error();
     }
 
-    if (isEndsWithOperator(calculationString)) {
-      return eval(removeCharactersFromEnd(calculationString));
-    }
-
-    return eval(calculationString);
+    return eval?.(
+      isEndsWithOperator(calculationString)
+        ? removeCharactersFromEnd(calculationString)
+        : calculationString,
+    );
   } catch {
     throw new Error('Calculation string is in an unsupported format');
   }
