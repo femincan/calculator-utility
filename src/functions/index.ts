@@ -3,3 +3,4 @@ export * from './addNumber';
 export * from './addOperator';
 export * from './togglePoint';
 export * from './clearAll';
+export * from './clearOne';
