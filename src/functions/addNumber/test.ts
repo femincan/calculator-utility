@@ -1,7 +1,7 @@
 import { addNumber } from '.';
 
 describe('addNumber (Function)', () => {
-  test('It should throws an error if the numberToAdd parameter is not a single-character string that holds a valid numeric value', () => {
+  test('It should throw an error if the numberToAdd parameter is not a single-character string that holds a valid numeric value', () => {
     expect(() => addNumber('2432', '24+97')).toThrowError('single-character');
   });
   test('It should not add the given number if the calculation string only contains a single zero and the given number is zero', () => {
