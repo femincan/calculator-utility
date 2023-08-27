@@ -1,6 +1,6 @@
 import { CalculationString } from '@src/types';
 import { removeCharactersFromEnd } from '@src/utils';
-import { isEndsWithLeadingZero, isTextSingleNumber } from './zero';
+import { isEndsWithLeadingZero, isTextSingleNumber } from './utils';
 
 const addNumber = (
   numberToAdd: string,

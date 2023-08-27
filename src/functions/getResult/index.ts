@@ -1,7 +1,7 @@
 /* eslint-disable no-eval */
 import { CalculationResult, CalculationString } from '@src/types';
 import { isEndsWithOperator, removeCharactersFromEnd } from '@src/utils';
-import { validateCalculationString } from './validateCalculationString';
+import { validateCalculationString } from './utils';
 
 const getResult = (calculationString: CalculationString): CalculationResult => {
   try {
