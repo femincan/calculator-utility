@@ -4,10 +4,10 @@ import {
   isEndsWithOperator,
   removeCharactersFromEnd,
 } from '@src/utils';
-import { isEndsWithDecimal, isEndsWithZeroAndPoint } from './point';
+import { isEndsWithDecimal, isEndsWithZeroAndPoint } from './utils';
 
 const togglePoint = (
-  calculationString: CalculationString
+  calculationString: CalculationString,
 ): CalculationString => {
   if (isEndsWith(calculationString, '.')) {
     if (isEndsWithZeroAndPoint(calculationString)) {

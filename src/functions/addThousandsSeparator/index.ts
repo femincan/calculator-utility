@@ -1,9 +1,5 @@
 import { CalculationString } from '@src/types';
-import {
-  addSeparator,
-  isEndsWithWholeNumber,
-  wholeNumberRegex,
-} from './wholeNumber';
+import { addSeparator, isEndsWithWholeNumber, wholeNumberRegex } from './utils';
 
 const addThousandsSeparator = (
   calculationString: CalculationString,
