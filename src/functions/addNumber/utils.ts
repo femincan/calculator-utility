@@ -9,7 +9,7 @@ const isEndsWithLeadingZero = (
 };
 
 const isTextSingleNumber = (text: string): boolean => {
-  const singleNumberRegex = /^[\d]{1}$/;
+  const singleNumberRegex = /^\d{1}$/;
 
   return singleNumberRegex.test(text);
 };
