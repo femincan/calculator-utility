@@ -3,13 +3,13 @@ import { CalculationString } from '@src/types';
 const isEndsWithLeadingZero = (
   calculationString: CalculationString,
 ): boolean => {
-  const zeroRegex = /^(.*[^.\d])?0$/;
+  const leadingZeroRegex = /^(.*[^.\d])?0$/;
 
-  return zeroRegex.test(calculationString);
+  return leadingZeroRegex.test(calculationString);
 };
 
 const isTextSingleNumber = (text: string): boolean => {
-  const singleNumberRegex = /^[0-9]{1}$/;
+  const singleNumberRegex = /^[\d]{1}$/;
 
   return singleNumberRegex.test(text);
 };
