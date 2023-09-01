@@ -44,9 +44,14 @@ describe('addOperator (Function)', () => {
       expect(newCalculationString).toBe('223*');
     });
     test('It should return the same calculation string if the last character is the same operator as the given operator', () => {
-      const newCalculationString = addOperator('+', '1+');
+      const calculationString1 = '1+';
+      const calculationString2 = '1*';
 
-      expect(newCalculationString).toBe('1+');
+      const newCalculationString1 = addOperator('+', calculationString1);
+      const newCalculationString2 = addOperator('*', calculationString2);
+
+      expect(newCalculationString1).toBe(calculationString1);
+      expect(newCalculationString2).toBe(calculationString2);
     });
     test('It should replace the operator with the given operator if the last character is operator', () => {
       const newCalculationString = addOperator('*', '92/');
