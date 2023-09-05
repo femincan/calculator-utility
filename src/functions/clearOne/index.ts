@@ -1,7 +1,7 @@
-import { CalculationString } from '@src/types';
+import { Calculation } from '@src/types';
 import { removeCharactersFromEnd } from '@src/utils';
 
-const clearOne = (calculationString: CalculationString) =>
+const clearOne = (calculationString: Calculation) =>
   removeCharactersFromEnd(calculationString);
 
 export { clearOne };

@@ -1,9 +1,9 @@
 /* eslint-disable no-eval */
-import { CalculationString } from '@src/types';
+import { Calculation } from '@src/types';
 import { isEndsWithOperator, removeCharactersFromEnd } from '@src/utils';
 import { validateCalculationString } from './utils';
 
-const getResult = (calculationString: CalculationString): string => {
+const getResult = (calculationString: Calculation): string => {
   try {
     if (!validateCalculationString(calculationString)) {
       throw new Error();

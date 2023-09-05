@@ -1,9 +1,7 @@
-import { CalculationString } from '@src/types';
+import { Calculation } from '@src/types';
 import { addSeparator, isEndsWithWholeNumber, wholeNumberRegex } from './utils';
 
-const addThousandsSeparator = (
-  calculationString: CalculationString,
-): CalculationString => {
+const addThousandsSeparator = (calculationString: Calculation): Calculation => {
   if (!isEndsWithWholeNumber(calculationString)) {
     return calculationString;
   }

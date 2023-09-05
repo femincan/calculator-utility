@@ -1,5 +1,5 @@
-import { CalculationString } from '@src/types';
+import { Calculation } from '@src/types';
 
-const clearAll = (): CalculationString => '';
+const clearAll = (): Calculation => '';
 
 export { clearAll };

@@ -1,8 +1,6 @@
-import { CalculationString } from '@src/types';
+import { Calculation } from '@src/types';
 
-const validateCalculationString = (
-  calculationString: CalculationString,
-): boolean => {
+const validateCalculationString = (calculationString: Calculation): boolean => {
   const validationRegex = /^[0-9.+\-*/]+$/;
 
   return validationRegex.test(calculationString);

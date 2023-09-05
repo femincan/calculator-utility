@@ -1,6 +1,6 @@
-import { CalculationString } from '@src/types';
+import { Calculation } from '@src/types';
 
-const isEndsWithOperator = (calculationString: CalculationString) => {
+const isEndsWithOperator = (calculationString: Calculation) => {
   const operators = ['+', '-', '*', '/'];
 
   const lastCharacter = calculationString.at(-1);

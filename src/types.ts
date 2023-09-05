@@ -1,3 +1,3 @@
-type CalculationString = string;
+type Calculation = string;
 
-export { CalculationString };
+export { Calculation };

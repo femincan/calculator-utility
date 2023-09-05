@@ -1,4 +1,4 @@
-import { CalculationString } from '@src/types';
+import { Calculation } from '@src/types';
 import { getKeyByValue } from '@src/utils';
 
 const operatorMap: Record<string, string> = {
@@ -12,9 +12,9 @@ type Options = {
 };
 
 const convertOperators = (
-  calculationString: CalculationString,
+  calculationString: Calculation,
   options: Options = { toSpecial: true },
-): CalculationString => {
+): Calculation => {
   const { toSpecial } = options;
 
   const operatorRegex = new RegExp(

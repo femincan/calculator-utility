@@ -1,9 +1,9 @@
-import { CalculationString } from '@src/types';
+import { Calculation } from '@src/types';
 
 const removeCharactersFromEnd = (
-  calculationString: CalculationString,
-  count: number = 1
-): CalculationString => {
+  calculationString: Calculation,
+  count: number = 1,
+): Calculation => {
   if (count > calculationString.length) {
     return '';
   }

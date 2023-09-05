@@ -1,10 +1,8 @@
-import { CalculationString } from '@src/types';
+import { Calculation } from '@src/types';
 import { isEndsWith, isEndsWithOperator } from '@src/utils';
 import { isEndsWithDecimal } from './utils';
 
-const addDecimal = (
-  calculationString: CalculationString,
-): CalculationString => {
+const addDecimal = (calculationString: Calculation): Calculation => {
   if (
     isEndsWith(calculationString, '.') ||
     isEndsWithDecimal(calculationString)

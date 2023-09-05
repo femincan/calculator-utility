@@ -3,13 +3,13 @@ import {
   isEndsWithOperator,
   removeCharactersFromEnd,
 } from '@src/utils';
-import { CalculationString } from '@src/types';
+import { Calculation } from '@src/types';
 import { toggleMinusOperator } from './utils';
 
 const addOperator = (
   operator: '+' | '-' | '*' | '/',
-  calculationString: CalculationString,
-): CalculationString => {
+  calculationString: Calculation,
+): Calculation => {
   if (operator === '-') {
     return toggleMinusOperator(calculationString);
   }
