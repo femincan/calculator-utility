@@ -7,30 +7,30 @@ import { Calculation } from '@src/types';
 import { toggleMinusOperator } from './utils';
 
 const addOperator = (
-  operator: '+' | '-' | '*' | '/',
+  operatorToAdd: '+' | '-' | '*' | '/',
   calculation: Calculation,
 ): Calculation => {
-  if (operator === '-') {
+  if (operatorToAdd === '-') {
     return toggleMinusOperator(calculation);
   }
 
   if (isEndsWithOperator(calculation)) {
     if (isEndsWith(calculation, '-')) {
-      return `${removeCharactersFromEnd(calculation, 2)}${operator}`;
+      return `${removeCharactersFromEnd(calculation, 2)}${operatorToAdd}`;
     }
 
-    if (isEndsWith(calculation, operator)) {
+    if (isEndsWith(calculation, operatorToAdd)) {
       return calculation;
     }
 
-    return `${removeCharactersFromEnd(calculation)}${operator}`;
+    return `${removeCharactersFromEnd(calculation)}${operatorToAdd}`;
   }
 
   if (calculation.length === 0) {
     return calculation;
   }
 
-  return `${calculation}${operator}`;
+  return `${calculation}${operatorToAdd}`;
 };
 
 export { addOperator };
