@@ -4,7 +4,7 @@ import { isEndsWithLeadingZero, isTextSingleNumber } from './utils';
 
 const addNumber = (
   numberToAdd: string,
-  calculationString: Calculation,
+  calculation: Calculation,
 ): Calculation => {
   if (!isTextSingleNumber(numberToAdd)) {
     throw new Error(
@@ -12,15 +12,15 @@ const addNumber = (
     );
   }
 
-  if (isEndsWithLeadingZero(calculationString)) {
+  if (isEndsWithLeadingZero(calculation)) {
     if (numberToAdd === '0') {
-      return calculationString;
+      return calculation;
     }
 
-    return `${removeCharactersFromEnd(calculationString)}${numberToAdd}`;
+    return `${removeCharactersFromEnd(calculation)}${numberToAdd}`;
   }
 
-  return `${calculationString}${numberToAdd}`;
+  return `${calculation}${numberToAdd}`;
 };
 
 export { addNumber };

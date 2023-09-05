@@ -8,29 +8,29 @@ import { toggleMinusOperator } from './utils';
 
 const addOperator = (
   operator: '+' | '-' | '*' | '/',
-  calculationString: Calculation,
+  calculation: Calculation,
 ): Calculation => {
   if (operator === '-') {
-    return toggleMinusOperator(calculationString);
+    return toggleMinusOperator(calculation);
   }
 
-  if (isEndsWithOperator(calculationString)) {
-    if (isEndsWith(calculationString, '-')) {
-      return `${removeCharactersFromEnd(calculationString, 2)}${operator}`;
+  if (isEndsWithOperator(calculation)) {
+    if (isEndsWith(calculation, '-')) {
+      return `${removeCharactersFromEnd(calculation, 2)}${operator}`;
     }
 
-    if (isEndsWith(calculationString, operator)) {
-      return calculationString;
+    if (isEndsWith(calculation, operator)) {
+      return calculation;
     }
 
-    return `${removeCharactersFromEnd(calculationString)}${operator}`;
+    return `${removeCharactersFromEnd(calculation)}${operator}`;
   }
 
-  if (calculationString.length === 0) {
-    return calculationString;
+  if (calculation.length === 0) {
+    return calculation;
   }
 
-  return `${calculationString}${operator}`;
+  return `${calculation}${operator}`;
 };
 
 export { addOperator };

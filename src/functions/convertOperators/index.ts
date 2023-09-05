@@ -12,7 +12,7 @@ type Options = {
 };
 
 const convertOperators = (
-  calculationString: Calculation,
+  calculation: Calculation,
   options: Options = { toSpecial: true },
 ): Calculation => {
   const { toSpecial } = options;
@@ -25,7 +25,7 @@ const convertOperators = (
     'g',
   );
 
-  return calculationString.replaceAll(operatorRegex, (match) =>
+  return calculation.replaceAll(operatorRegex, (match) =>
     toSpecial
       ? operatorMap[match]
       : (getKeyByValue(operatorMap, match) as string),

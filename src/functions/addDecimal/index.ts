@@ -2,19 +2,16 @@ import { Calculation } from '@src/types';
 import { isEndsWith, isEndsWithOperator } from '@src/utils';
 import { isEndsWithDecimal } from './utils';
 
-const addDecimal = (calculationString: Calculation): Calculation => {
-  if (
-    isEndsWith(calculationString, '.') ||
-    isEndsWithDecimal(calculationString)
-  ) {
-    return calculationString;
+const addDecimal = (calculation: Calculation): Calculation => {
+  if (isEndsWith(calculation, '.') || isEndsWithDecimal(calculation)) {
+    return calculation;
   }
 
-  if (calculationString.length === 0 || isEndsWithOperator(calculationString)) {
-    return `${calculationString}0.`;
+  if (calculation.length === 0 || isEndsWithOperator(calculation)) {
+    return `${calculation}0.`;
   }
 
-  return `${calculationString}.`;
+  return `${calculation}.`;
 };
 
 export { addDecimal };
