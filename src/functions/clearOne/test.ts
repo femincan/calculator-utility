@@ -2,16 +2,14 @@ import { clearOne } from '.';
 
 describe('clearOne (Function)', () => {
   test('It should remove the last character of the calculation string', () => {
-    const calculationString = '24+2';
-    const newCalculationString = clearOne(calculationString);
+    const calculation = '24+2';
+    const newCalculation = clearOne(calculation);
 
-    expect(newCalculationString).toBe(
-      calculationString.slice(0, calculationString.length - 1),
-    );
+    expect(newCalculation).toBe(calculation.slice(0, calculation.length - 1));
   });
   test('It returns empty string if the calculation string is empty', () => {
-    const newCalculationString = clearOne('');
+    const newCalculation = clearOne('');
 
-    expect(newCalculationString).toBe('');
+    expect(newCalculation).toBe('');
   });
 });
