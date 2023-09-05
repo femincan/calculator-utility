@@ -9,11 +9,17 @@ const getResult = (calculation: Calculation): string => {
       throw new Error();
     }
 
-    return `${eval?.(
-      isEndsWithOperator(calculation)
-        ? removeCharactersFromEnd(calculation)
-        : calculation,
-    )}`;
+    let cleanedCalculation: Calculation | undefined;
+
+    if (isEndsWithOperator(calculation)) {
+      cleanedCalculation = removeCharactersFromEnd(calculation);
+
+      if (isEndsWithOperator(cleanedCalculation)) {
+        cleanedCalculation = removeCharactersFromEnd(cleanedCalculation);
+      }
+    }
+
+    return `${eval?.(cleanedCalculation ?? calculation)}`;
   } catch {
     throw new Error('Calculation string is in an unsupported format');
   }
