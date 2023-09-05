@@ -2,70 +2,54 @@ import { addThousandsSeparator } from '.';
 
 describe('addThousandsSeparator (Function)', () => {
   test('It should return the calculation string as is if the last character is an math operator', () => {
-    const calculationString = '23/2*';
-    const newCalculationString = addThousandsSeparator(calculationString);
+    const calculation = '23/2*';
+    const newCalculation = addThousandsSeparator(calculation);
 
-    expect(newCalculationString).toBe(calculationString);
+    expect(newCalculation).toBe(calculation);
   });
   test('It should return the calculation string as is if the last part of the calculation string is a decimal number', () => {
-    const calculationString = '8+3.3';
-    const newCalculationString = addThousandsSeparator(calculationString);
+    const calculation = '8+3.3';
+    const newCalculation = addThousandsSeparator(calculation);
 
-    expect(newCalculationString).toBe(calculationString);
+    expect(newCalculation).toBe(calculation);
   });
   test('It should return the calculation string as is if the last part of the calculation string is less than a thousand', () => {
-    const calculationString = '23+234';
-    const newCalculationString = addThousandsSeparator(calculationString);
+    const calculation = '23+234';
+    const newCalculation = addThousandsSeparator(calculation);
 
-    expect(newCalculationString).toBe(calculationString);
+    expect(newCalculation).toBe(calculation);
   });
   test('It should add thousands separators if the last part of the calculation string is a whole number', () => {
     const calculations: {
-      calculationString: string;
-      calculationStringWithSeparator: string;
+      calculation: string;
+      calculationWithSeparator: string;
     }[] = [
       {
-        calculationString: '79+27/99*233427976',
-        calculationStringWithSeparator: '79+27/99*233,427,976',
+        calculation: '79+27/99*233427976',
+        calculationWithSeparator: '79+27/99*233,427,976',
       },
       {
-        calculationString: '1962',
-        calculationStringWithSeparator: '1,962',
+        calculation: '1962',
+        calculationWithSeparator: '1,962',
       },
       {
-        calculationString: '2723792',
-        calculationStringWithSeparator: '2,723,792',
+        calculation: '2723792',
+        calculationWithSeparator: '2,723,792',
       },
       {
-        calculationString: '22481',
-        calculationStringWithSeparator: '22,481',
+        calculation: '22481',
+        calculationWithSeparator: '22,481',
       },
     ];
 
-    const newCalculationString0 = addThousandsSeparator(
-      calculations[0].calculationString,
-    );
-    const newCalculationString1 = addThousandsSeparator(
-      calculations[1].calculationString,
-    );
-    const newCalculationString2 = addThousandsSeparator(
-      calculations[2].calculationString,
-    );
-    const newCalculationString3 = addThousandsSeparator(
-      calculations[3].calculationString,
-    );
+    const newCalculation0 = addThousandsSeparator(calculations[0].calculation);
+    const newCalculation1 = addThousandsSeparator(calculations[1].calculation);
+    const newCalculation2 = addThousandsSeparator(calculations[2].calculation);
+    const newCalculation3 = addThousandsSeparator(calculations[3].calculation);
 
-    expect(newCalculationString0).toBe(
-      calculations[0].calculationStringWithSeparator,
-    );
-    expect(newCalculationString1).toBe(
-      calculations[1].calculationStringWithSeparator,
-    );
-    expect(newCalculationString2).toBe(
-      calculations[2].calculationStringWithSeparator,
-    );
-    expect(newCalculationString3).toBe(
-      calculations[3].calculationStringWithSeparator,
-    );
+    expect(newCalculation0).toBe(calculations[0].calculationWithSeparator);
+    expect(newCalculation1).toBe(calculations[1].calculationWithSeparator);
+    expect(newCalculation2).toBe(calculations[2].calculationWithSeparator);
+    expect(newCalculation3).toBe(calculations[3].calculationWithSeparator);
   });
 });

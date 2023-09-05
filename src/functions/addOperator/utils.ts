@@ -1,14 +1,12 @@
-import { CalculationString } from '@src/types';
+import { Calculation } from '@src/types';
 import { isEndsWith, removeCharactersFromEnd } from '@src/utils';
 
-const toggleMinusOperator = (
-  calculationString: CalculationString,
-): CalculationString => {
-  if (isEndsWith(calculationString, '-')) {
-    return removeCharactersFromEnd(calculationString);
+const toggleMinusOperator = (calculation: Calculation): Calculation => {
+  if (isEndsWith(calculation, '-')) {
+    return removeCharactersFromEnd(calculation);
   }
 
-  return `${calculationString}-`;
+  return `${calculation}-`;
 };
 
 export { toggleMinusOperator };

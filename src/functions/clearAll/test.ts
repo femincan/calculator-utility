@@ -2,8 +2,8 @@ import { clearAll } from '.';
 
 describe('clearAll (Function)', () => {
   test('It should return an empty string', () => {
-    const newCalculationString = clearAll();
+    const newCalculation = clearAll();
 
-    expect(newCalculationString).toBe('');
+    expect(newCalculation).toBe('');
   });
 });

@@ -1,9 +1,9 @@
-import { CalculationString } from '@src/types';
+import { Calculation } from '@src/types';
 
-const isEndsWithDecimal = (calculationString: CalculationString) => {
+const isEndsWithDecimal = (calculation: Calculation) => {
   const decimalRegex = /^.*(\D{1})?\d+\.\d+$/;
 
-  return decimalRegex.test(calculationString);
+  return decimalRegex.test(calculation);
 };
 
 export { isEndsWithDecimal };

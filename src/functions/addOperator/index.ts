@@ -3,34 +3,34 @@ import {
   isEndsWithOperator,
   removeCharactersFromEnd,
 } from '@src/utils';
-import { CalculationString } from '@src/types';
+import { Calculation } from '@src/types';
 import { toggleMinusOperator } from './utils';
 
 const addOperator = (
-  operator: '+' | '-' | '*' | '/',
-  calculationString: CalculationString,
-): CalculationString => {
-  if (operator === '-') {
-    return toggleMinusOperator(calculationString);
+  operatorToAdd: '+' | '-' | '*' | '/',
+  calculation: Calculation,
+): Calculation => {
+  if (operatorToAdd === '-') {
+    return toggleMinusOperator(calculation);
   }
 
-  if (isEndsWithOperator(calculationString)) {
-    if (isEndsWith(calculationString, '-')) {
-      return `${removeCharactersFromEnd(calculationString, 2)}${operator}`;
+  if (isEndsWithOperator(calculation)) {
+    if (isEndsWith(calculation, '-')) {
+      return `${removeCharactersFromEnd(calculation, 2)}${operatorToAdd}`;
     }
 
-    if (isEndsWith(calculationString, operator)) {
-      return calculationString;
+    if (isEndsWith(calculation, operatorToAdd)) {
+      return calculation;
     }
 
-    return `${removeCharactersFromEnd(calculationString)}${operator}`;
+    return `${removeCharactersFromEnd(calculation)}${operatorToAdd}`;
   }
 
-  if (calculationString.length === 0) {
-    return calculationString;
+  if (calculation.length === 0) {
+    return calculation;
   }
 
-  return `${calculationString}${operator}`;
+  return `${calculation}${operatorToAdd}`;
 };
 
 export { addOperator };

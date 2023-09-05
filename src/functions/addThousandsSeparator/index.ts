@@ -1,14 +1,12 @@
-import { CalculationString } from '@src/types';
+import { Calculation } from '@src/types';
 import { addSeparator, isEndsWithWholeNumber, wholeNumberRegex } from './utils';
 
-const addThousandsSeparator = (
-  calculationString: CalculationString,
-): CalculationString => {
-  if (!isEndsWithWholeNumber(calculationString)) {
-    return calculationString;
+const addThousandsSeparator = (calculation: Calculation): Calculation => {
+  if (!isEndsWithWholeNumber(calculation)) {
+    return calculation;
   }
 
-  return calculationString.replace(
+  return calculation.replace(
     wholeNumberRegex,
     (match, firstPart, wholeNumber) => {
       if (wholeNumber.length < 4) return match;

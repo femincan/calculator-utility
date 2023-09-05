@@ -1,3 +1,0 @@
-const operators = ['+', '-', '*', '/'];
-
-export { operators };

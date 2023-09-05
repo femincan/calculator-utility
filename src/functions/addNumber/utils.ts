@@ -1,11 +1,9 @@
-import { CalculationString } from '@src/types';
+import { Calculation } from '@src/types';
 
-const isEndsWithLeadingZero = (
-  calculationString: CalculationString,
-): boolean => {
+const isEndsWithLeadingZero = (calculation: Calculation): boolean => {
   const leadingZeroRegex = /^(.*[^.\d])?0$/;
 
-  return leadingZeroRegex.test(calculationString);
+  return leadingZeroRegex.test(calculation);
 };
 
 const isTextSingleNumber = (text: string): boolean => {

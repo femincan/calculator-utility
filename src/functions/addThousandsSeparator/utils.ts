@@ -1,9 +1,9 @@
-import { CalculationString } from '@src/types';
+import { Calculation } from '@src/types';
 
 const wholeNumberRegex = /^(.*\D{1})?(?<!\d+\.\d*)(\d+)$/;
 
-const isEndsWithWholeNumber = (calculationString: CalculationString): boolean =>
-  wholeNumberRegex.test(calculationString);
+const isEndsWithWholeNumber = (calculation: Calculation): boolean =>
+  wholeNumberRegex.test(calculation);
 
 const addSeparator = (wholeNumber: string): string => {
   const wholeNumberArray = wholeNumber.split('');
