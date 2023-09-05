@@ -1,11 +1,11 @@
 /* eslint-disable no-eval */
 import { Calculation } from '@src/types';
 import { isEndsWithOperator, removeCharactersFromEnd } from '@src/utils';
-import { validateCalculationString } from './utils';
+import { validateCalculation } from './utils';
 
 const getResult = (calculation: Calculation): string => {
   try {
-    if (!validateCalculationString(calculation)) {
+    if (!validateCalculation(calculation)) {
       throw new Error();
     }
 
