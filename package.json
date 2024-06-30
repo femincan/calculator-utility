@@ -38,7 +38,7 @@
     "format": "prettier --write \"src/**/*.ts\""
   },
   "author": "Furkan Emin Can",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/femincan/calculator-utility"
